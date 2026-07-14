@@ -1719,3 +1719,9 @@
     font-size:0.9rem;font-weight:500;color:var(--ink-soft);
   }
   .nav__mobile-sublink:hover{color:var(--signal);}
+
+  /* ----- Keep section headings from orphaning a word; let the portfolio
+           title use the full width so it sits on one line on desktop ----- */
+  .section-head h2{text-wrap:balance;}
+  #work .section-head{max-width:none;}
+  #work .section-head .lead{max-width:38rem;}

@@ -55,16 +55,26 @@
     }
 
     // --- Cycling headline word ---
-    var wordEl = document.getElementById('heroWord');
-    if (wordEl && !reduceMotion) {
-      var words = ['Grow', 'Convert', 'Rank', 'Scale', 'Shine'];
+    // Re-queried each tick so it survives a dual-mode content swap, and the
+    // word list follows the active mode's messaging.
+    if (!reduceMotion) {
+      var wordsByMode = {
+        current: ['Grow', 'Convert', 'Rank', 'Scale', 'Shine'],
+        ai: ['Scale', 'Automate', 'Accelerate', 'Grow', 'Save Time']
+      };
       var idx = 0;
       setInterval(function () {
+        var wordEl = document.getElementById('heroWord');
+        if (!wordEl) return;
+        var mode = document.documentElement.getAttribute('data-mode') === 'ai' ? 'ai' : 'current';
+        var words = wordsByMode[mode];
         idx = (idx + 1) % words.length;
         wordEl.classList.add('is-swapping');
         setTimeout(function () {
-          wordEl.textContent = words[idx];
-          wordEl.classList.remove('is-swapping');
+          var w = document.getElementById('heroWord');
+          if (!w) return;
+          w.textContent = words[idx];
+          w.classList.remove('is-swapping');
         }, 280);
       }, 2600);
     }

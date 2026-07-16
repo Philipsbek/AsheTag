@@ -1,0 +1,433 @@
+/* =====================================================================
+   AsheTag — AI WORKFLOW AUTOMATION MODE  (Mode 2)
+   ---------------------------------------------------------------------
+   A second, complete "product" that shares the exact same markup, layout
+   and animations as the default Web-Studio site. Nothing here changes
+   structure — it only re-skins the existing components into a dark,
+   modern AI aesthetic (cyan / purple / blue, glassmorphism).
+
+   Everything is scoped under  html[data-mode="ai"]  so the default light
+   experience is 100% untouched when data-mode is "current".
+
+   Loaded on every page AFTER css/style.css so these rules win by order.
+   ===================================================================== */
+
+/* ---------- 1. Token overrides (re-skins everything token-driven) ---------- */
+html[data-mode="ai"]{
+  --ink:#EAF0FB;              /* primary text becomes light */
+  --ink-soft:#AEB8CC;
+  --muted:#7E88A0;
+  --paper:#101A2E;           /* default card / panel surface */
+  --fog:#0F1729;
+  --line:rgba(255,255,255,0.09);
+  --signal:#22D3EE;          /* cyan accent */
+  --signal-soft:rgba(34,211,238,0.12);
+  --signal-dark:#67E8F9;
+  --shadow-card:0 24px 48px -24px rgba(0,0,0,0.65);
+
+  /* AI palette */
+  --ai-cyan:#22D3EE;
+  --ai-purple:#A855F7;
+  --ai-blue:#3B82F6;
+  --ai-grad:linear-gradient(135deg,#22D3EE 0%,#6366F1 55%,#A855F7 100%);
+  --ai-grad-soft:linear-gradient(135deg,rgba(34,211,238,0.16),rgba(168,85,247,0.16));
+
+  color-scheme:dark;
+}
+
+html[data-mode="ai"] body{
+  background:#0A0E1A;
+  color:var(--ink);
+}
+
+/* Smooth theme cross-fade on the properties that carry colour */
+html[data-mode="ai"] body,
+html[data-mode="ai"] .nav,
+html[data-mode="ai"] .card,
+html[data-mode="ai"] .price-card,
+html[data-mode="ai"] .process-step,
+html[data-mode="ai"] .service-block,
+html[data-mode="ai"] .faq-item,
+html[data-mode="ai"] .feature-grid__item,
+html[data-mode="ai"] .areas-grid__item,
+html[data-mode="ai"] .contact-panel{
+  transition:background .5s var(--ease), border-color .5s var(--ease), color .5s var(--ease);
+}
+
+html[data-mode="ai"] ::selection{background:rgba(34,211,238,0.28);color:#EAF0FB;}
+
+/* ---------- 2. Buttons (must not rely on the now-light --ink) ---------- */
+html[data-mode="ai"] .btn--primary{
+  background:var(--ai-grad);
+  color:#05070E;
+  box-shadow:0 10px 30px -12px rgba(34,211,238,0.5);
+}
+html[data-mode="ai"] .btn--primary:hover{
+  background:linear-gradient(135deg,#3EE0F5 0%,#7C7BFF 55%,#C084FC 100%);
+  box-shadow:0 18px 44px -12px rgba(124,92,255,0.6);
+}
+html[data-mode="ai"] .btn--signal{
+  background:linear-gradient(135deg,var(--ai-purple),var(--ai-blue));
+  color:#fff;
+  box-shadow:0 10px 30px -12px rgba(168,85,247,0.5);
+}
+html[data-mode="ai"] .btn--signal:hover{
+  background:linear-gradient(135deg,#B968FF,#4F92FF);
+}
+html[data-mode="ai"] .btn--secondary{
+  color:var(--ink);
+  border-color:rgba(255,255,255,0.16);
+}
+html[data-mode="ai"] .btn--secondary:hover{
+  border-color:var(--ai-cyan);
+  background:rgba(34,211,238,0.08);
+}
+
+/* ---------- 3. Nav + mega menu ---------- */
+html[data-mode="ai"] .nav{
+  background:rgba(10,14,26,0.72);
+  border-bottom-color:var(--line);
+}
+html[data-mode="ai"] .nav__mobile{
+  background:#0B1120;
+  border-bottom-color:var(--line);
+  box-shadow:0 24px 40px -24px rgba(0,0,0,0.7);
+}
+html[data-mode="ai"] .brand__text{
+  background:var(--ai-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+html[data-mode="ai"] .megamenu{
+  background:rgba(11,16,30,0.96);
+  border-bottom-color:var(--line);
+  box-shadow:0 32px 60px -30px rgba(0,0,0,0.8);
+}
+html[data-mode="ai"] .megamenu__link:hover,
+html[data-mode="ai"] .megamenu__link:focus-visible,
+html[data-mode="ai"] .megamenu__link.is-active{background:rgba(255,255,255,0.05);}
+html[data-mode="ai"] .megamenu__preview{background:var(--fog);}
+html[data-mode="ai"] .nav__scrim{background:rgba(2,4,10,0.55);}
+
+/* ---------- 4. Hero ---------- */
+html[data-mode="ai"] .hero{
+  background:
+    radial-gradient(60% 50% at 12% 8%, rgba(34,211,238,0.20) 0%, rgba(34,211,238,0) 70%),
+    radial-gradient(55% 50% at 88% 18%, rgba(168,85,247,0.24) 0%, rgba(168,85,247,0) 70%),
+    radial-gradient(50% 45% at 50% 95%, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0) 70%),
+    linear-gradient(180deg, #0A0E1A 0%, #0B1120 55%, #090D18 100%);
+}
+html[data-mode="ai"] .hero__orb--a{background:radial-gradient(circle, rgba(34,211,238,0.5) 0%, rgba(34,211,238,0) 70%);}
+html[data-mode="ai"] .hero__orb--b{background:radial-gradient(circle, rgba(168,85,247,0.55) 0%, rgba(168,85,247,0) 70%);}
+html[data-mode="ai"] .hero__orb--c{background:radial-gradient(circle, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0) 70%);}
+html[data-mode="ai"] .hero__dotgrid circle{fill:rgba(140,160,200,0.45);}
+html[data-mode="ai"] .hero__float-icon{
+  background:rgba(255,255,255,0.06);
+  border-color:var(--line);
+  color:var(--ai-cyan);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  box-shadow:0 22px 44px -16px rgba(0,0,0,0.6);
+}
+html[data-mode="ai"] .browser-frame{
+  background:#0C1222;
+  border-color:var(--line);
+  box-shadow:0 40px 80px -30px rgba(0,0,0,0.75), 0 0 0 1px rgba(34,211,238,0.08);
+}
+html[data-mode="ai"] .hero__showcase-side{border-color:var(--line);box-shadow:0 30px 60px -28px rgba(0,0,0,0.7);}
+html[data-mode="ai"] .badge{
+  background:rgba(34,211,238,0.08);
+  border-color:rgba(34,211,238,0.28);
+  color:var(--ink);
+}
+html[data-mode="ai"] .hero-word{
+  background:var(--ai-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* ---------- 5. Section backgrounds & overlays ---------- */
+html[data-mode="ai"] #services::after{
+  background:linear-gradient(180deg, rgba(10,14,26,0.5) 0%, rgba(10,14,26,0.92) 35%, #0A0E1A 100%);
+}
+html[data-mode="ai"] #services::before{
+  opacity:0.10;
+  background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1600&q=60');
+}
+html[data-mode="ai"] .why,
+html[data-mode="ai"] .faq{background:var(--fog);}
+html[data-mode="ai"] .why::before,
+html[data-mode="ai"] .faq::before{
+  background-image:radial-gradient(circle, rgba(255,255,255,0.07) 1.4px, transparent 1.4px);
+  opacity:0.5;
+}
+html[data-mode="ai"] .why::after{background:radial-gradient(circle, rgba(168,85,247,0.3) 0%, rgba(168,85,247,0) 70%);}
+html[data-mode="ai"] .faq::after{background:radial-gradient(circle, rgba(34,211,238,0.22) 0%, rgba(34,211,238,0) 70%);}
+html[data-mode="ai"] .pricing-bg::before{
+  background:
+    radial-gradient(45% 40% at 15% 10%, rgba(34,211,238,0.14) 0%, rgba(34,211,238,0) 70%),
+    radial-gradient(40% 35% at 85% 90%, rgba(168,85,247,0.18) 0%, rgba(168,85,247,0) 70%);
+}
+html[data-mode="ai"] .page-hero{
+  background:
+    radial-gradient(55% 60% at 15% 10%, rgba(34,211,238,0.16) 0%, rgba(34,211,238,0) 70%),
+    radial-gradient(55% 55% at 85% 15%, rgba(168,85,247,0.20) 0%, rgba(168,85,247,0) 70%),
+    linear-gradient(180deg, #0A0E1A 0%, #0B1120 60%, #090D18 100%);
+  border-bottom-color:var(--line);
+}
+html[data-mode="ai"] .areas__bg-photo img{filter:grayscale(0.35) brightness(0.7);opacity:0.35;}
+html[data-mode="ai"] .areas__bg-photo::after{
+  background:linear-gradient(180deg, rgba(10,14,26,0.82) 0%, rgba(10,14,26,0.9) 60%, var(--fog) 100%);
+}
+
+/* ---------- 6. Cards / panels → glassmorphism ---------- */
+html[data-mode="ai"] .card,
+html[data-mode="ai"] .price-card,
+html[data-mode="ai"] .process-step,
+html[data-mode="ai"] .service-block,
+html[data-mode="ai"] .faq-item,
+html[data-mode="ai"] .areas-grid__item,
+html[data-mode="ai"] .contact-panel,
+html[data-mode="ai"] .article-nav__link,
+html[data-mode="ai"] .portfolio-filter{
+  background:rgba(255,255,255,0.035);
+  border-color:var(--line);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+}
+html[data-mode="ai"] .card:hover,
+html[data-mode="ai"] .price-card:hover,
+html[data-mode="ai"] .process-step:hover,
+html[data-mode="ai"] .faq-item:hover{
+  border-color:rgba(34,211,238,0.35);
+  box-shadow:0 24px 48px -24px rgba(0,0,0,0.7), 0 0 0 1px rgba(34,211,238,0.06);
+}
+html[data-mode="ai"] .card__media,
+html[data-mode="ai"] .megamenu__preview{background:#0C1222;}
+html[data-mode="ai"] .feature-grid{background:var(--line);border-color:var(--line);}
+html[data-mode="ai"] .feature-grid__item{background:#101A2E;}
+html[data-mode="ai"] .card__icon,
+html[data-mode="ai"] .service-block__icon,
+html[data-mode="ai"] .contact-info__icon,
+html[data-mode="ai"] .process-step__num{
+  background:var(--ai-grad-soft);
+  color:var(--ai-cyan);
+  box-shadow:inset 0 0 0 1px rgba(34,211,238,0.2);
+}
+
+/* Featured pricing card (was solid --ink → now a glowing gradient panel) */
+html[data-mode="ai"] .price-card--featured{
+  background:linear-gradient(160deg, rgba(34,211,238,0.16) 0%, rgba(99,102,241,0.14) 50%, rgba(168,85,247,0.16) 100%);
+  border-color:rgba(34,211,238,0.4);
+  color:var(--ink);
+  box-shadow:0 30px 70px -30px rgba(34,211,238,0.35);
+}
+html[data-mode="ai"] .price-card--featured .price-card__desc,
+html[data-mode="ai"] .price-card--featured .price-card__amount .range{color:var(--ink-soft);}
+html[data-mode="ai"] .price-card--featured .price-card__features{color:var(--ink);}
+html[data-mode="ai"] .price-card--featured .price-card__features i{color:var(--ai-cyan);}
+html[data-mode="ai"] .price-card__badge{background:var(--ai-grad);color:#05070E;}
+
+/* ---------- 7. Portfolio filters ---------- */
+html[data-mode="ai"] .portfolio-filter:hover{border-color:var(--ai-cyan);color:var(--ink);}
+html[data-mode="ai"] .portfolio-filter.is-active{
+  background:var(--ai-grad);
+  border-color:transparent;
+  color:#05070E;
+}
+
+/* ---------- 8. Stats + CTA (were solid --ink) ---------- */
+html[data-mode="ai"] .stats{
+  background:linear-gradient(135deg,#0C1222 0%,#0E1730 50%,#140E2C 100%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+html[data-mode="ai"] .stat-item__num{color:#fff;}
+html[data-mode="ai"] .stat-item__num .stat-suffix{color:var(--ai-cyan);}
+html[data-mode="ai"] .cta{background:#080B14;}
+html[data-mode="ai"] .cta__bg img{opacity:0.18;filter:saturate(1.2) hue-rotate(180deg);}
+html[data-mode="ai"] .cta__bg::after{
+  background:linear-gradient(180deg, rgba(8,11,20,0.6) 0%, rgba(8,11,20,0.94) 100%),
+             radial-gradient(60% 60% at 50% 0%, rgba(34,211,238,0.18) 0%, rgba(34,211,238,0) 70%);
+}
+
+/* ---------- 9. Footer ---------- */
+html[data-mode="ai"] .footer{
+  background:#070A12;
+  color:var(--ink);
+  border-top:1px solid var(--line);
+}
+html[data-mode="ai"] .footer__nav a{color:rgba(234,240,251,0.6);}
+html[data-mode="ai"] .footer__nav a:hover,
+html[data-mode="ai"] .footer__nav a.is-current{color:var(--ai-cyan);}
+html[data-mode="ai"] .footer__brand{color:var(--ink);}
+
+/* ---------- 10. Forms, tooltips, misc ---------- */
+html[data-mode="ai"] .form__group input,
+html[data-mode="ai"] .form__group select,
+html[data-mode="ai"] .form__group textarea{
+  background:rgba(255,255,255,0.04);
+  border-color:var(--line);
+  color:var(--ink);
+}
+html[data-mode="ai"] .form__group input::placeholder,
+html[data-mode="ai"] .form__group textarea::placeholder{color:var(--muted);}
+html[data-mode="ai"] .form__group input:focus,
+html[data-mode="ai"] .form__group select:focus,
+html[data-mode="ai"] .form__group textarea:focus{
+  background:rgba(255,255,255,0.06);
+  border-color:var(--ai-cyan);
+}
+html[data-mode="ai"] .form__group select option{background:#0F1729;color:var(--ink);}
+html[data-mode="ai"] .wa-float__tooltip{background:#101A2E;color:var(--ink);border:1px solid var(--line);}
+html[data-mode="ai"] .scroll-progress{background:var(--ai-grad);}
+html[data-mode="ai"] .post-tag{background:var(--signal-soft);color:#7DE8F9;}
+html[data-mode="ai"] .article__body blockquote{border-left-color:var(--ai-cyan);}
+html[data-mode="ai"] .article-nav__link:hover{border-color:var(--ai-cyan);background:rgba(255,255,255,0.04);}
+html[data-mode="ai"] .copy-trigger__toast{background:var(--ai-grad);color:#05070E;}
+html[data-mode="ai"] .why__visual figcaption{
+  background:linear-gradient(180deg, rgba(8,11,20,0) 0%, rgba(8,11,20,0.85) 100%);
+}
+
+/* =====================================================================
+   11. PREMIUM MODE SWITCH  (in the nav, both desktop & mobile)
+   A left/right segmented switch: "Studio" ⇄ "AI".
+   ===================================================================== */
+.mode-switch{
+  --ms-w:150px;
+  --ms-h:38px;
+  position:relative;
+  flex-shrink:0;
+  width:var(--ms-w);
+  height:var(--ms-h);
+  padding:0;
+  border:none;
+  background:none;
+  border-radius:var(--radius-full);
+  -webkit-tap-highlight-color:transparent;
+}
+.mode-switch__track{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  width:100%;
+  height:100%;
+  border-radius:var(--radius-full);
+  background:#EEF0F3;
+  border:1px solid var(--line);
+  box-shadow:inset 0 1px 3px rgba(11,12,14,0.12);
+  overflow:hidden;
+  transition:background .45s var(--ease), border-color .45s var(--ease);
+}
+/* Sliding thumb */
+.mode-switch__thumb{
+  position:absolute;
+  top:3px;
+  left:3px;
+  width:calc(50% - 3px);
+  height:calc(100% - 6px);
+  border-radius:var(--radius-full);
+  background:#fff;
+  box-shadow:0 4px 12px -2px rgba(11,12,14,0.28), 0 1px 2px rgba(11,12,14,0.2);
+  transition:transform .45s cubic-bezier(.5,1.4,.5,1), background .45s var(--ease), box-shadow .45s var(--ease);
+  z-index:1;
+}
+.mode-switch__opt{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.4rem;
+  height:100%;
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:0.76rem;
+  font-weight:600;
+  letter-spacing:0.01em;
+  color:var(--muted);
+  transition:color .35s var(--ease), opacity .35s var(--ease);
+  user-select:none;
+}
+.mode-switch__opt i{font-size:0.85rem;transition:transform .45s var(--ease);}
+.mode-switch__opt--left{color:var(--ink);}      /* default: Studio active */
+.mode-switch__opt--right{color:var(--muted);}
+
+/* --- AI mode: thumb slides right, colours flip to the AI gradient --- */
+html[data-mode="ai"] .mode-switch__track{
+  background:rgba(255,255,255,0.05);
+  border-color:rgba(34,211,238,0.3);
+  box-shadow:inset 0 0 0 1px rgba(34,211,238,0.12), 0 0 18px -6px rgba(34,211,238,0.45);
+}
+html[data-mode="ai"] .mode-switch__thumb{
+  transform:translateX(100%);
+  background:var(--ai-grad);
+  box-shadow:0 4px 16px -2px rgba(34,211,238,0.6);
+}
+html[data-mode="ai"] .mode-switch__opt--left{color:var(--muted);}
+html[data-mode="ai"] .mode-switch__opt--right{color:#05070E;}
+html[data-mode="ai"] .mode-switch__opt--right i{transform:rotate(-8deg) scale(1.05);}
+
+.mode-switch:hover .mode-switch__thumb{box-shadow:0 6px 18px -2px rgba(11,12,14,0.35);}
+html[data-mode="ai"] .mode-switch:hover .mode-switch__thumb{box-shadow:0 6px 22px -2px rgba(34,211,238,0.75);}
+.mode-switch:active .mode-switch__track{transform:scale(0.97);}
+.mode-switch:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:var(--radius-full);}
+
+/* Compact on small screens (sits next to the burger) */
+@media(max-width:520px){
+  .mode-switch{--ms-w:112px;--ms-h:34px;}
+  .mode-switch__opt span{display:none;}
+  .mode-switch__opt i{font-size:0.95rem;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .mode-switch__thumb,.mode-switch__opt,.mode-switch__opt i,.mode-switch__track{transition:none;}
+}
+
+/* =====================================================================
+   12. MODE TRANSITION OVERLAY
+   A brief premium wipe/fade played while the content + theme swap.
+   ===================================================================== */
+.mode-fx{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  pointer-events:none;
+  opacity:0;
+  background:
+    radial-gradient(120% 120% at 50% 50%, rgba(34,211,238,0.22) 0%, rgba(168,85,247,0.18) 45%, rgba(8,11,20,0.9) 100%);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+  transition:opacity .28s ease;
+}
+.mode-fx.is-active{opacity:1;}
+.mode-fx__label{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(.94);
+  display:flex;align-items:center;gap:0.6rem;
+  font-family:'Sora',system-ui,sans-serif;
+  font-weight:700;
+  font-size:1.1rem;
+  letter-spacing:0.01em;
+  color:#fff;
+  opacity:0;
+  transition:opacity .28s ease, transform .28s var(--ease);
+  text-shadow:0 2px 20px rgba(0,0,0,0.4);
+}
+.mode-fx.is-active .mode-fx__label{opacity:1;transform:translate(-50%,-50%) scale(1);}
+.mode-fx__label i{color:#22D3EE;}
+
+/* Gentle content settle after a swap */
+.mode-swapping-in{animation:modeSwapIn .5s var(--ease) both;}
+@keyframes modeSwapIn{
+  from{opacity:0;transform:translateY(8px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .mode-fx,.mode-fx__label{transition:none;}
+  .mode-swapping-in{animation:none;}
+}

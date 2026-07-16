@@ -299,7 +299,7 @@ window.SITE_CONTENT = {
       'ct.form.note': "Fill in the form and we'll open WhatsApp with your details ready to send.",
       'ct.form.svc.opt': '<option value="AI Workflow Automation">AI Workflow Automation</option><option value="AI Chatbots & Assistants">AI Chatbots &amp; Assistants</option><option value="CRM & Sales Automation">CRM &amp; Sales Automation</option><option value="Not sure yet">Not sure yet</option>',
       'ct.form.msg.label': 'What would you like to automate?',
-      'ct.info.0.p': '<a href="https://wa.me/60179812010" target="_blank" rel="noopener">+60 17-981 2010</a><br>Our main line — the quickest way to reach us.',
+      'ct.info.0.p': '<a href="https://wa.me/60124273735" target="_blank" rel="noopener">+60 12-427 3735</a><br>Our main line — the quickest way to reach us.',
       'ct.info.1.h': 'Based in Malaysia',
       'ct.info.1.p': 'Working with teams across Malaysia, Singapore and worldwide — fully remote and async.',
       'ct.info.2.h': 'Fully remote',

@@ -40,30 +40,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "AsheTag",
-  "image": "https://www.ashetag.com/logo.png",
-  "description": "AsheTag is a Malaysia-based web design agency specializing in custom WordPress websites built with Elementor, website redesign, basic SEO optimization and website maintenance for businesses worldwide.",
-  "url": "https://www.ashetag.com/",
-  "telephone": "+60124273735",
-  "priceRange": "RM1,200 - RM8,000+",
-  "address": {"@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Malaysia"},
-  "areaServed": [
-    {"@type": "Country", "name": "Malaysia"},
-    {"@type": "City", "name": "Kuala Lumpur"},
-    {"@type": "City", "name": "Petaling Jaya"},
-    {"@type": "City", "name": "Shah Alam"},
-    {"@type": "City", "name": "Johor Bahru"},
-    {"@type": "City", "name": "Penang"},
-    {"@type": "City", "name": "Ipoh"},
-    {"@type": "City", "name": "Malacca"},
-    {"@type": "City", "name": "Kota Kinabalu"},
-    {"@type": "City", "name": "Kuching"}
-  ],
-  "makesOffer": [
-    {"@type": "Offer", "name": "Launch Website Package", "priceCurrency": "MYR", "price": "1200"},
-    {"@type": "Offer", "name": "Growth Website Package", "priceCurrency": "MYR", "price": "2000"},
-    {"@type": "Offer", "name": "Authority Website Package", "priceCurrency": "MYR", "price": "4000"}
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.ashetag.com/#organization",
+      "name": "AsheTag",
+      "alternateName": "AsheTag Web Design",
+      "url": "https://www.ashetag.com/",
+      "logo": {"@id": "https://www.ashetag.com/#logo"},
+      "image": {"@id": "https://www.ashetag.com/#logo"},
+      "description": "AsheTag is a Malaysia-based web design agency specializing in custom WordPress websites built with Elementor, website redesign, basic SEO optimization and website maintenance for businesses worldwide.",
+      "slogan": "Build. Brand. Grow.",
+      "telephone": "+60124273735",
+      "priceRange": "RM1,200 - RM8,000+",
+      "currenciesAccepted": "MYR",
+      "address": {"@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Malaysia"},
+      "areaServed": [
+        {"@type": "Country", "name": "Malaysia"},
+        {"@type": "City", "name": "Kuala Lumpur"},
+        {"@type": "City", "name": "Petaling Jaya"},
+        {"@type": "City", "name": "Shah Alam"},
+        {"@type": "City", "name": "Johor Bahru"},
+        {"@type": "City", "name": "Penang"},
+        {"@type": "City", "name": "Ipoh"},
+        {"@type": "City", "name": "Malacca"},
+        {"@type": "City", "name": "Kota Kinabalu"},
+        {"@type": "City", "name": "Kuching"}
+      ],
+      "knowsLanguage": ["en", "ms"],
+      "knowsAbout": ["Web Design", "WordPress", "Elementor", "Website Redesign", "Website Maintenance", "On-Page SEO", "Responsive Web Design", "Website Speed Optimization", "Conversion Rate Optimization"],
+      "contactPoint": {"@type": "ContactPoint", "@id": "https://www.ashetag.com/#contactpoint", "telephone": "+60124273735", "contactType": "customer support", "availableLanguage": ["English", "Malay"], "areaServed": "MY"},
+      "hasOfferCatalog": {"@id": "https://www.ashetag.com/pricing.html#offercatalog"}
+    },
+    {"@type": "ImageObject", "@id": "https://www.ashetag.com/#logo", "url": "https://www.ashetag.com/assets/images/logo.png", "contentUrl": "https://www.ashetag.com/assets/images/logo.png", "width": 229, "height": 160, "caption": "AsheTag"},
+    {"@type": "WebSite", "@id": "https://www.ashetag.com/#website", "url": "https://www.ashetag.com/", "name": "AsheTag", "description": "AsheTag is a Malaysia-based web design agency building affordable, professional WordPress websites with Elementor for SMEs, startups and businesses across Kuala Lumpur, Selangor, Penang, Johor Bahru and worldwide. Custom website design, redesign, basic SEO and maintenance — get a free consultation on WhatsApp.", "publisher": {"@id": "https://www.ashetag.com/#organization"}, "inLanguage": "en-MY"},
+    {
+      "@type": ["WebPage", "FAQPage"],
+      "@id": "https://www.ashetag.com/pricing.html#webpage",
+      "url": "https://www.ashetag.com/pricing.html",
+      "name": "Website Design Pricing Malaysia | Launch, Growth & Authority Packages — AsheTag",
+      "description": "Transparent website design pricing in Malaysia from AsheTag. Launch from RM1,200, Growth from RM2,000, and Authority from RM4,000 — WordPress websites built with Elementor, with clear scope, revision rounds, support periods and delivery times.",
+      "isPartOf": {"@id": "https://www.ashetag.com/#website"},
+      "about": {"@id": "https://www.ashetag.com/#organization"},
+      "primaryImageOfPage": {"@id": "https://www.ashetag.com/pricing.html#primaryimage"},
+      "image": {"@id": "https://www.ashetag.com/pricing.html#primaryimage"},
+      "breadcrumb": {"@id": "https://www.ashetag.com/pricing.html#breadcrumb"},
+      "inLanguage": "en-MY",
+      "mainEntity": [
+        {"@type": "Question", "name": "How much does a website cost in Malaysia?", "acceptedAnswer": {"@type": "Answer", "text": "Website design pricing in Malaysia with AsheTag starts from RM1,200 for a simple Launch website and ranges up to RM8,000+ for a fully custom Authority website, depending on the number of pages, design complexity, and features needed."}},
+        {"@type": "Question", "name": "How long does it take to build a website?", "acceptedAnswer": {"@type": "Answer", "text": "Most projects take between 3 and 21 days depending on the package, from the Launch package's 3–5 days to Authority's fully custom 10–21 day build."}},
+        {"@type": "Question", "name": "Is hosting included?", "acceptedAnswer": {"@type": "Answer", "text": "Hosting isn't included in our packages, but we're happy to recommend reliable providers and help you get set up."}},
+        {"@type": "Question", "name": "Do you only serve Malaysian clients?", "acceptedAnswer": {"@type": "Answer", "text": "No. We're based in Malaysia but work with clients worldwide. All communication happens over WhatsApp and email, so location never gets in the way."}}
+      ]
+    },
+    {"@type": "ImageObject", "@id": "https://www.ashetag.com/pricing.html#primaryimage", "url": "https://images.unsplash.com/photo-1574218732130-6b19257fd9db?auto=format&fit=crop&w=900&q=80", "contentUrl": "https://images.unsplash.com/photo-1574218732130-6b19257fd9db?auto=format&fit=crop&w=900&q=80", "inLanguage": "en-MY"},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ashetag.com/pricing.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ashetag.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Pricing"}
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://www.ashetag.com/pricing.html#offercatalog",
+      "name": "Website Design Packages",
+      "description": "Three website design packages from AsheTag: Launch, Growth and Authority.",
+      "url": "https://www.ashetag.com/pricing.html",
+      "numberOfItems": 3,
+      "provider": {"@id": "https://www.ashetag.com/#organization"},
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "@id": "https://www.ashetag.com/pricing.html#offer-launch",
+          "position": 1,
+          "name": "Launch Website Package",
+          "description": "Perfect for startups and personal brands. Up to 3 pages, WordPress setup, Elementor Pro design, mobile responsive, contact form, WhatsApp integration, basic on-page SEO, 2 revision rounds and 14 days support.",
+          "url": "https://www.ashetag.com/pricing.html",
+          "priceCurrency": "MYR",
+          "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "MYR", "minPrice": 1200, "maxPrice": 1800},
+          "availability": "https://schema.org/InStock",
+          "seller": {"@id": "https://www.ashetag.com/#organization"},
+          "areaServed": {"@type": "Country", "name": "Malaysia"},
+          "deliveryLeadTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "DAY"},
+          "itemOffered": {"@type": "Service", "name": "Launch Website Package", "serviceType": "Website Design", "provider": {"@id": "https://www.ashetag.com/#organization"}}
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.ashetag.com/pricing.html#offer-growth",
+          "position": 2,
+          "name": "Growth Website Package",
+          "description": "Ideal for SMEs and businesses looking to attract more customers online. Up to 8 pages, blog setup, social media integration, advanced speed optimization, semi-custom design, 3 revision rounds and 30 days support.",
+          "url": "https://www.ashetag.com/pricing.html",
+          "priceCurrency": "MYR",
+          "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "MYR", "minPrice": 2000, "maxPrice": 3500},
+          "availability": "https://schema.org/InStock",
+          "seller": {"@id": "https://www.ashetag.com/#organization"},
+          "areaServed": {"@type": "Country", "name": "Malaysia"},
+          "deliveryLeadTime": {"@type": "QuantitativeValue", "minValue": 5, "maxValue": 10, "unitCode": "DAY"},
+          "itemOffered": {"@type": "Service", "name": "Growth Website Package", "serviceType": "Website Design", "provider": {"@id": "https://www.ashetag.com/#organization"}}
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.ashetag.com/pricing.html#offer-authority",
+          "position": 3,
+          "name": "Authority Website Package",
+          "description": "Built for established businesses that want a premium online presence. Up to 15 pages, fully custom design, premium speed optimization, copywriting assistance, unlimited revisions for 30 days and 60 days support.",
+          "url": "https://www.ashetag.com/pricing.html",
+          "priceCurrency": "MYR",
+          "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "MYR", "minPrice": 4000},
+          "availability": "https://schema.org/InStock",
+          "seller": {"@id": "https://www.ashetag.com/#organization"},
+          "areaServed": {"@type": "Country", "name": "Malaysia"},
+          "deliveryLeadTime": {"@type": "QuantitativeValue", "minValue": 10, "maxValue": 21, "unitCode": "DAY"},
+          "itemOffered": {"@type": "Service", "name": "Authority Website Package", "serviceType": "Website Design", "provider": {"@id": "https://www.ashetag.com/#organization"}}
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -469,9 +563,6 @@
       </div>
     </div>
   </section>
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a website cost in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Website design pricing in Malaysia with AsheTag starts from RM1,200 for a simple Launch website and ranges up to RM8,000+ for a fully custom Authority website, depending on the number of pages, design complexity, and features needed."}},{"@type":"Question","name":"How long does it take to build a website?","acceptedAnswer":{"@type":"Answer","text":"Most projects take between 3 and 21 days depending on the package, from the Launch package's 3–5 days to Authority's fully custom 10–21 day build."}},{"@type":"Question","name":"Is hosting included?","acceptedAnswer":{"@type":"Answer","text":"Hosting isn't included in our packages, but we're happy to recommend reliable providers and help you get set up."}},{"@type":"Question","name":"Do you only serve Malaysian clients?","acceptedAnswer":{"@type":"Answer","text":"No. We're based in Malaysia but work with clients worldwide. All communication happens over WhatsApp and email, so location never gets in the way."}}]}
-</script>
 
   <!-- ===== FINAL CTA ===== -->
   <section id="contact" class="section section--lg cta">

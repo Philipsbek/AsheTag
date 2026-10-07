@@ -40,30 +40,103 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "AsheTag",
-  "image": "https://www.ashetag.com/logo.png",
-  "description": "AsheTag is a Malaysia-based web design agency specializing in custom WordPress websites built with Elementor, website redesign, basic SEO optimization and website maintenance for businesses worldwide.",
-  "url": "https://www.ashetag.com/",
-  "telephone": "+60124273735",
-  "priceRange": "RM1,200 - RM8,000+",
-  "address": {"@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Malaysia"},
-  "areaServed": [
-    {"@type": "Country", "name": "Malaysia"},
-    {"@type": "City", "name": "Kuala Lumpur"},
-    {"@type": "City", "name": "Petaling Jaya"},
-    {"@type": "City", "name": "Shah Alam"},
-    {"@type": "City", "name": "Johor Bahru"},
-    {"@type": "City", "name": "Penang"},
-    {"@type": "City", "name": "Ipoh"},
-    {"@type": "City", "name": "Malacca"},
-    {"@type": "City", "name": "Kota Kinabalu"},
-    {"@type": "City", "name": "Kuching"}
-  ],
-  "makesOffer": [
-    {"@type": "Offer", "name": "Launch Website Package", "priceCurrency": "MYR", "price": "1200"},
-    {"@type": "Offer", "name": "Growth Website Package", "priceCurrency": "MYR", "price": "2000"},
-    {"@type": "Offer", "name": "Authority Website Package", "priceCurrency": "MYR", "price": "4000"}
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.ashetag.com/#organization",
+      "name": "AsheTag",
+      "alternateName": "AsheTag Web Design",
+      "url": "https://www.ashetag.com/",
+      "logo": {"@id": "https://www.ashetag.com/#logo"},
+      "image": {"@id": "https://www.ashetag.com/#logo"},
+      "description": "AsheTag is a Malaysia-based web design agency specializing in custom WordPress websites built with Elementor, website redesign, basic SEO optimization and website maintenance for businesses worldwide.",
+      "slogan": "Build. Brand. Grow.",
+      "telephone": "+60124273735",
+      "priceRange": "RM1,200 - RM8,000+",
+      "currenciesAccepted": "MYR",
+      "address": {"@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Malaysia"},
+      "areaServed": [
+        {"@type": "Country", "name": "Malaysia"},
+        {"@type": "City", "name": "Kuala Lumpur"},
+        {"@type": "City", "name": "Petaling Jaya"},
+        {"@type": "City", "name": "Shah Alam"},
+        {"@type": "City", "name": "Johor Bahru"},
+        {"@type": "City", "name": "Penang"},
+        {"@type": "City", "name": "Ipoh"},
+        {"@type": "City", "name": "Malacca"},
+        {"@type": "City", "name": "Kota Kinabalu"},
+        {"@type": "City", "name": "Kuching"}
+      ],
+      "knowsLanguage": ["en", "ms"],
+      "knowsAbout": ["Web Design", "WordPress", "Elementor", "Website Redesign", "Website Maintenance", "On-Page SEO", "Responsive Web Design", "Website Speed Optimization", "Conversion Rate Optimization"],
+      "contactPoint": {"@type": "ContactPoint", "@id": "https://www.ashetag.com/#contactpoint", "telephone": "+60124273735", "contactType": "customer support", "availableLanguage": ["English", "Malay"], "areaServed": "MY"},
+      "hasOfferCatalog": {"@id": "https://www.ashetag.com/pricing.html#offercatalog"}
+    },
+    {"@type": "ImageObject", "@id": "https://www.ashetag.com/#logo", "url": "https://www.ashetag.com/assets/images/logo.png", "contentUrl": "https://www.ashetag.com/assets/images/logo.png", "width": 229, "height": 160, "caption": "AsheTag"},
+    {"@type": "WebSite", "@id": "https://www.ashetag.com/#website", "url": "https://www.ashetag.com/", "name": "AsheTag", "description": "AsheTag is a Malaysia-based web design agency building affordable, professional WordPress websites with Elementor for SMEs, startups and businesses across Kuala Lumpur, Selangor, Penang, Johor Bahru and worldwide. Custom website design, redesign, basic SEO and maintenance — get a free consultation on WhatsApp.", "publisher": {"@id": "https://www.ashetag.com/#organization"}, "inLanguage": "en-MY"},
+    {
+      "@type": ["WebPage", "FAQPage"],
+      "@id": "https://www.ashetag.com/services.html#webpage",
+      "url": "https://www.ashetag.com/services.html",
+      "name": "Web Design Services Malaysia | Website Design, Redesign & Maintenance — AsheTag",
+      "description": "Explore AsheTag's web design services in Malaysia: custom WordPress website design, website redesign, and website maintenance — all built with Elementor, mobile responsive, fast and SEO-friendly. Serving businesses across Malaysia and worldwide.",
+      "isPartOf": {"@id": "https://www.ashetag.com/#website"},
+      "about": {"@id": "https://www.ashetag.com/#organization"},
+      "primaryImageOfPage": {"@id": "https://www.ashetag.com/services.html#primaryimage"},
+      "image": {"@id": "https://www.ashetag.com/services.html#primaryimage"},
+      "breadcrumb": {"@id": "https://www.ashetag.com/services.html#breadcrumb"},
+      "inLanguage": "en-MY",
+      "mainEntity": [
+        {"@type": "Question", "name": "Can you redesign an existing website?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our Website Redesign service modernizes outdated sites for better performance, design, and user experience while keeping the content you want to carry over."}},
+        {"@type": "Question", "name": "Will my website be mobile-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every website we build is fully responsive and tested across phones, tablets, and desktops before launch."}},
+        {"@type": "Question", "name": "Can I update the website myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We build on WordPress with Elementor, which makes editing text, images, and pages straightforward — no coding required."}},
+        {"@type": "Question", "name": "Is hosting included?", "acceptedAnswer": {"@type": "Answer", "text": "Hosting isn't included in our packages, but we're happy to recommend reliable providers and help you get set up."}}
+      ]
+    },
+    {"@type": "ImageObject", "@id": "https://www.ashetag.com/services.html#primaryimage", "url": "https://images.unsplash.com/photo-1574218732130-6b19257fd9db?auto=format&fit=crop&w=900&q=80", "contentUrl": "https://images.unsplash.com/photo-1574218732130-6b19257fd9db?auto=format&fit=crop&w=900&q=80", "inLanguage": "en-MY"},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ashetag.com/services.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ashetag.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Services"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.ashetag.com/services.html#website-design",
+      "name": "Website Design Malaysia",
+      "description": "Custom WordPress website design built with Elementor for businesses across Kuala Lumpur, Selangor, Penang, Johor Bahru and beyond — sharp, professional, and built to convert visitors from day one.",
+      "serviceType": "Website Design",
+      "url": "https://www.ashetag.com/services.html#website-design",
+      "provider": {"@id": "https://www.ashetag.com/#organization"},
+      "areaServed": {"@type": "Country", "name": "Malaysia"},
+      "audience": {"@type": "BusinessAudience", "name": "Startups, SMEs and personal brands"},
+      "hasOfferCatalog": {"@id": "https://www.ashetag.com/pricing.html#offercatalog"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.ashetag.com/services.html#website-redesign",
+      "name": "Website Redesign Malaysia",
+      "description": "Modernize an outdated website with a full redesign — faster performance, cleaner UI/UX design, and an experience Malaysian customers trust, while keeping the content worth carrying over.",
+      "serviceType": "Website Redesign",
+      "url": "https://www.ashetag.com/services.html#website-redesign",
+      "provider": {"@id": "https://www.ashetag.com/#organization"},
+      "areaServed": {"@type": "Country", "name": "Malaysia"},
+      "audience": {"@type": "BusinessAudience", "name": "Businesses with an existing, outdated website"},
+      "hasOfferCatalog": {"@id": "https://www.ashetag.com/pricing.html#offercatalog"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.ashetag.com/services.html#website-maintenance",
+      "name": "Website Maintenance Malaysia",
+      "description": "Ongoing WordPress website maintenance to keep your site secure, updated, and running smoothly — so you can focus on running your business instead of your website.",
+      "serviceType": "Website Maintenance",
+      "url": "https://www.ashetag.com/services.html#website-maintenance",
+      "provider": {"@id": "https://www.ashetag.com/#organization"},
+      "areaServed": {"@type": "Country", "name": "Malaysia"},
+      "audience": {"@type": "BusinessAudience", "name": "Business owners running a WordPress website"}
+    }
   ]
 }
 </script>
@@ -528,9 +601,6 @@
       </div>
     </div>
   </section>
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you redesign an existing website?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Website Redesign service modernizes outdated sites for better performance, design, and user experience while keeping the content you want to carry over."}},{"@type":"Question","name":"Will my website be mobile-friendly?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every website we build is fully responsive and tested across phones, tablets, and desktops before launch."}},{"@type":"Question","name":"Can I update the website myself?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build on WordPress with Elementor, which makes editing text, images, and pages straightforward — no coding required."}},{"@type":"Question","name":"Is hosting included?","acceptedAnswer":{"@type":"Answer","text":"Hosting isn't included in our packages, but we're happy to recommend reliable providers and help you get set up."}}]}
-</script>
 
   <!-- ===== FINAL CTA ===== -->
   <section id="contact" class="section section--lg cta">

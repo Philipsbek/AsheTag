@@ -37,33 +37,283 @@
   (function(){try{var m=localStorage.getItem('ashetag-mode');document.documentElement.setAttribute('data-mode', m==='ai'?'ai':'current');}catch(e){document.documentElement.setAttribute('data-mode','current');}})();
 </script>
 
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "AsheTag",
-  "image": "https://www.ashetag.com/logo.png",
-  "description": "AsheTag is a Malaysia-based web design agency specializing in custom WordPress websites built with Elementor, website redesign, basic SEO optimization and website maintenance for businesses worldwide.",
-  "url": "https://www.ashetag.com/",
-  "telephone": "+60124273735",
-  "priceRange": "RM1,200 - RM8,000+",
-  "address": {"@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Malaysia"},
-  "areaServed": [
-    {"@type": "Country", "name": "Malaysia"},
-    {"@type": "City", "name": "Kuala Lumpur"},
-    {"@type": "City", "name": "Petaling Jaya"},
-    {"@type": "City", "name": "Shah Alam"},
-    {"@type": "City", "name": "Johor Bahru"},
-    {"@type": "City", "name": "Penang"},
-    {"@type": "City", "name": "Ipoh"},
-    {"@type": "City", "name": "Malacca"},
-    {"@type": "City", "name": "Kota Kinabalu"},
-    {"@type": "City", "name": "Kuching"}
-  ],
-  "makesOffer": [
-    {"@type": "Offer", "name": "Launch Website Package", "priceCurrency": "MYR", "price": "1200"},
-    {"@type": "Offer", "name": "Growth Website Package", "priceCurrency": "MYR", "price": "2000"},
-    {"@type": "Offer", "name": "Authority Website Package", "priceCurrency": "MYR", "price": "4000"}
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.ashetag.com/#organization",
+      "name": "AsheTag",
+      "alternateName": "AsheTag Web Design",
+      "url": "https://www.ashetag.com/",
+      "logo": {
+        "@id": "https://www.ashetag.com/#logo"
+      },
+      "image": {
+        "@id": "https://www.ashetag.com/#logo"
+      },
+      "description": "AsheTag is a Malaysia-based web design agency specializing in custom WordPress websites built with Elementor, website redesign, basic SEO optimization and website maintenance for businesses worldwide.",
+      "slogan": "Build. Brand. Grow.",
+      "telephone": "+60124273735",
+      "priceRange": "RM1,200 - RM8,000+",
+      "currenciesAccepted": "MYR",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MY",
+        "addressRegion": "Malaysia"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Malaysia"
+        },
+        {
+          "@type": "City",
+          "name": "Kuala Lumpur"
+        },
+        {
+          "@type": "City",
+          "name": "Petaling Jaya"
+        },
+        {
+          "@type": "City",
+          "name": "Shah Alam"
+        },
+        {
+          "@type": "City",
+          "name": "Johor Bahru"
+        },
+        {
+          "@type": "City",
+          "name": "Penang"
+        },
+        {
+          "@type": "City",
+          "name": "Ipoh"
+        },
+        {
+          "@type": "City",
+          "name": "Malacca"
+        },
+        {
+          "@type": "City",
+          "name": "Kota Kinabalu"
+        },
+        {
+          "@type": "City",
+          "name": "Kuching"
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "ms"
+      ],
+      "knowsAbout": [
+        "Web Design",
+        "WordPress",
+        "Elementor",
+        "Website Redesign",
+        "Website Maintenance",
+        "On-Page SEO",
+        "Responsive Web Design",
+        "Website Speed Optimization",
+        "Conversion Rate Optimization"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "@id": "https://www.ashetag.com/#contactpoint",
+        "telephone": "+60124273735",
+        "contactType": "customer support",
+        "availableLanguage": [
+          "English",
+          "Malay"
+        ],
+        "areaServed": "MY"
+      },
+      "hasOfferCatalog": {
+        "@id": "https://www.ashetag.com/pricing.html#offercatalog"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ashetag.com/#logo",
+      "url": "https://www.ashetag.com/assets/images/logo.png",
+      "contentUrl": "https://www.ashetag.com/assets/images/logo.png",
+      "width": 229,
+      "height": 160,
+      "caption": "AsheTag"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.ashetag.com/#website",
+      "url": "https://www.ashetag.com/",
+      "name": "AsheTag",
+      "description": "AsheTag is a Malaysia-based web design agency building affordable, professional WordPress websites with Elementor for SMEs, startups and businesses across Kuala Lumpur, Selangor, Penang, Johor Bahru and worldwide. Custom website design, redesign, basic SEO and maintenance — get a free consultation on WhatsApp.",
+      "publisher": {
+        "@id": "https://www.ashetag.com/#organization"
+      },
+      "inLanguage": "en-MY"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.ashetag.com/blog.html#webpage",
+      "url": "https://www.ashetag.com/blog.html",
+      "name": "Blog | Web Design, WordPress & SEO Guides for Malaysian Businesses — AsheTag",
+      "description": "The AsheTag blog — practical guides on web design, WordPress, Elementor, website performance and basic SEO to help SMEs and startups across Malaysia get more from their websites.",
+      "isPartOf": {
+        "@id": "https://www.ashetag.com/#website"
+      },
+      "about": {
+        "@id": "https://www.ashetag.com/#organization"
+      },
+      "inLanguage": "en-MY",
+      "breadcrumb": {
+        "@id": "https://www.ashetag.com/blog.html#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ashetag.com/blog.html#blog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ashetag.com/blog.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ashetag.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog"
+        }
+      ]
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://www.ashetag.com/blog.html#blog",
+      "name": "The AsheTag Blog",
+      "description": "The AsheTag blog — practical guides on web design, WordPress, Elementor, website performance and basic SEO to help SMEs and startups across Malaysia get more from their websites.",
+      "url": "https://www.ashetag.com/blog.html",
+      "publisher": {
+        "@id": "https://www.ashetag.com/#organization"
+      },
+      "inLanguage": "en-MY",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.ashetag.com/blog.html#post-0",
+          "headline": "Why Your Malaysian Business Needs a Professional Website in 2026",
+          "url": "https://www.ashetag.com/blog-detail.html",
+          "mainEntityOfPage": "https://www.ashetag.com/blog-detail.html",
+          "datePublished": "2026-08-03",
+          "dateModified": "2026-08-03",
+          "articleSection": "Web Design",
+          "image": "https://images.unsplash.com/photo-1604843990505-3519a72f5299?auto=format&fit=crop&w=800&q=80",
+          "author": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "inLanguage": "en-MY"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.ashetag.com/blog.html#post-1",
+          "headline": "7 Signs Your Website Is Losing You Customers",
+          "url": "https://www.ashetag.com/blog-detail.html",
+          "mainEntityOfPage": "https://www.ashetag.com/blog-detail.html",
+          "datePublished": "2026-07-21",
+          "dateModified": "2026-07-21",
+          "articleSection": "Conversion",
+          "image": "https://images.unsplash.com/photo-1595926686332-764c6616f2ad?auto=format&fit=crop&w=800&q=80",
+          "author": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "inLanguage": "en-MY"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.ashetag.com/blog.html#post-2",
+          "headline": "WordPress + Elementor: Why We Build on It",
+          "url": "https://www.ashetag.com/blog-detail.html",
+          "mainEntityOfPage": "https://www.ashetag.com/blog-detail.html",
+          "datePublished": "2026-07-09",
+          "dateModified": "2026-07-09",
+          "articleSection": "WordPress",
+          "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+          "author": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "inLanguage": "en-MY"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.ashetag.com/blog.html#post-3",
+          "headline": "What Makes a Website Actually Convert Visitors",
+          "url": "https://www.ashetag.com/blog-detail.html",
+          "mainEntityOfPage": "https://www.ashetag.com/blog-detail.html",
+          "datePublished": "2026-06-24",
+          "dateModified": "2026-06-24",
+          "articleSection": "UX Design",
+          "image": "https://images.unsplash.com/photo-1758691737278-3af15b37af48?auto=format&fit=crop&w=800&q=80",
+          "author": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "inLanguage": "en-MY"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.ashetag.com/blog.html#post-4",
+          "headline": "Basic On-Page SEO Every New Website Should Have",
+          "url": "https://www.ashetag.com/blog-detail.html",
+          "mainEntityOfPage": "https://www.ashetag.com/blog-detail.html",
+          "datePublished": "2026-06-10",
+          "dateModified": "2026-06-10",
+          "articleSection": "SEO",
+          "image": "https://images.unsplash.com/photo-1746114774895-133d5b677db8?auto=format&fit=crop&w=800&q=80",
+          "author": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "inLanguage": "en-MY"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.ashetag.com/blog.html#post-5",
+          "headline": "Website Speed: Why It Quietly Decides Your Results",
+          "url": "https://www.ashetag.com/blog-detail.html",
+          "mainEntityOfPage": "https://www.ashetag.com/blog-detail.html",
+          "datePublished": "2026-05-28",
+          "dateModified": "2026-05-28",
+          "articleSection": "Performance",
+          "image": "https://images.unsplash.com/photo-1774600122432-dfddc9987ff8?auto=format&fit=crop&w=800&q=80",
+          "author": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://www.ashetag.com/#organization"
+          },
+          "inLanguage": "en-MY"
+        }
+      ]
+    }
   ]
 }
 </script>

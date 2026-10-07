@@ -76,10 +76,13 @@ html[data-mode="ai"] .cbot__launcher{box-shadow:0 16px 34px -12px rgba(34,211,23
 html[data-mode="ai"] .cbot__launcher-pulse{border-color:#0F1729;}
 .cbot.is-open .cbot__launcher{opacity:0;pointer-events:none;transform:scale(0.8);}
 
-@media(max-width:520px){
-  .cbot__launcher{left:1rem;bottom:1rem;height:3.25rem;}
+@media(max-width:639px){
+  /* Mobile: a 52px circle on the right, stacked directly above the WhatsApp
+     button. At <=639px .wa-float becomes right:1rem / bottom:1rem with a 52px
+     button, so we match those exactly for a clean vertical stack. */
+  .cbot__launcher{left:auto;right:1rem;bottom:calc(1rem + 52px + 14px);width:52px;height:52px;padding:0;justify-content:center;}
   .cbot__launcher-label{display:none;}
-  .cbot__launcher{padding:0.4rem;}
+  .cbot__launcher-pulse{top:0.15rem;right:0.15rem;}
 }
 
 /* ---------- Panel ---------- */

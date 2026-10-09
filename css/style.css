@@ -1351,6 +1351,7 @@
   @media(min-width:640px){.work-grid{column-gap:1.5rem;}}
   .work-card .card__media{height:200px;}
   .work-card h3 a:hover{color:var(--signal);}
+  @media(min-width:640px){.work-card--wide{grid-column:1 / -1;}.work-card--wide .card__media{height:260px;}}
   .work-card .post-card__excerpt{
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
     overflow:hidden;min-height:3.04em;

@@ -7,7 +7,7 @@
        automation in AI mode, and re-skins to match (via css/chatbot.css)
      • answers from the site's real services / pricing / FAQ / process
        content, with quick-reply chips
-     • hands off to WhatsApp (+60 12-427 3735) with a pre-filled message
+     • hands off to WhatsApp (+60 17-981 2010) with a pre-filled message
 
    UPGRADE PATH → Claude-powered bot:
      Replace the body of `resolve()` with a call to your own serverless
@@ -20,7 +20,7 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '60124273735';
+  var WA_NUMBER = '60179812010';
   var WA_TEXT = {
     current: "Hi AsheTag, I'd like a free consultation about my website.",
     ai: "Hi AsheTag AI, I'd like to talk about automating my business."

@@ -233,7 +233,7 @@
     if (!trigger) return;
 
     function copyNumber() {
-      var number = '+60 12-427 3735';
+      var number = '+60 17-981 2010';
       var resetToast = function () {
         trigger.classList.add('is-copied');
         setTimeout(function () { trigger.classList.remove('is-copied'); }, 1600);
@@ -307,7 +307,7 @@
     var form = document.getElementById('contactForm');
     if (!form) return;
     var status = document.getElementById('formStatus');
-    var WA_NUMBER = '60124273735';
+    var WA_NUMBER = '60179812010';
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();

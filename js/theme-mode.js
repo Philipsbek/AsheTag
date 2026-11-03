@@ -21,6 +21,14 @@
   'use strict';
 
   var STORE_KEY = 'ashetag-mode';
+
+  /* TEMP (Studio focus): the Studio/AI switcher is hidden in the nav, so
+     force everyone onto the Studio site and forget any saved AI choice.
+     To restore the switcher later: delete these two lines AND the
+     `.mode-switch{display:none !important;}` rule in css/ai-mode.css. */
+  try { localStorage.removeItem(STORE_KEY); } catch (e) {}
+  document.documentElement.setAttribute('data-mode', 'current');
+
   var AI = (window.SITE_CONTENT && window.SITE_CONTENT.ai) || { html: {}, cls: {} };
   var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

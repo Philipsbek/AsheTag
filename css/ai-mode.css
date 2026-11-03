@@ -295,6 +295,12 @@ html[data-mode="ai"] .why__visual figcaption{
    11. PREMIUM MODE SWITCH  (in the nav, both desktop & mobile)
    A left/right segmented switch: "Studio" ⇄ "AI".
    ===================================================================== */
+
+/* TEMP: Studio/AI switcher hidden to focus on the Studio version.
+   To re-enable it later, delete just this one rule. All switcher
+   HTML and JS is left intact, so it comes straight back. */
+.mode-switch{display:none !important;}
+
 .mode-switch{
   --ms-w:150px;
   --ms-h:38px;

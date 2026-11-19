@@ -207,6 +207,37 @@
     update();
   })();
 
+  // ===== Recent work marquee =====
+  (function () {
+    var marquee = document.querySelector('.work-marquee');
+    if (!marquee) return;
+
+    var track = marquee.querySelector('.work-marquee__track');
+    var group = marquee.querySelector('.work-marquee__group');
+    var viewport = marquee.querySelector('.work-marquee__viewport');
+    if (!track || !group || !viewport) return;
+
+    // An identical second group makes the -50% translation loop seamlessly.
+    var duplicate = group.cloneNode(true);
+    duplicate.setAttribute('aria-hidden', 'true');
+    duplicate.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('tabindex', '-1');
+    });
+    track.appendChild(duplicate);
+
+    // Keyboard navigation uses a stationary, scrollable row of the real links.
+    group.addEventListener('focusin', function (event) {
+      marquee.classList.add('is-keyboard');
+      event.target.scrollIntoView({ block: 'nearest', inline: 'center' });
+    });
+    group.addEventListener('focusout', function (event) {
+      if (!group.contains(event.relatedTarget)) {
+        marquee.classList.remove('is-keyboard');
+        viewport.scrollLeft = 0;
+      }
+    });
+  })();
+
   // ===== Portfolio filters =====
   (function () {
     var filters = document.querySelectorAll('.portfolio-filter');
